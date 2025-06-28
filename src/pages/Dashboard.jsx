@@ -10,7 +10,7 @@ function Dashboard() {
 
   const fetchDashboard = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks/dashboard', {
+      const res = await axios.get('http://44.203.69.173:5000/api/tasks/dashboard', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setData(res.data);

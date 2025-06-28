@@ -11,7 +11,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/register', {
+      const res = await axios.post('http://44.203.69.173:5000/api/register', {
         name,
         email,
         password,
