@@ -12,7 +12,7 @@ function Tasks() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://44.203.69.173:5000/api/tasks', {
+      const res = await axios.get('http://localhost:5000/api/tasks', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -26,7 +26,7 @@ function Tasks() {
     e.preventDefault();
     try {
       await axios.post(
-        'http://44.203.69.173:5000/api/tasks',
+        'http://localhost:5000/api/tasks',
         { title, description, dueDate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -41,14 +41,14 @@ function Tasks() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://44.203.69.173:5000/api/tasks/${id}`, {
+    await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchTasks();
   };
 
   const handleToggleStatus = async (id) => {
-    await axios.patch(`http://44.203.69.173:5000/api/tasks/${id}/complete`, {}, {
+    await axios.patch(`http://localhost:5000/api/tasks/${id}/complete`, {}, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchTasks();
